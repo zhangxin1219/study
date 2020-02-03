@@ -6,21 +6,37 @@ package com.github.zhangxin.concurrent;
  * @Description:
  */
 public class ThreadSleepTest {
+    private static Object o = new Object();
     public static void main(String[] args) throws InterruptedException {
         Thread threadA = new Thread(new Runnable() {
             @Override
             public void run() {
-                try {
-                    System.out.println("threadA begin");
-                    Thread.sleep(10000);
-                    System.out.println("threadA end");
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                synchronized (o) {
+                    try {
+                        System.out.println("threadA begin");
+                        Thread.sleep(1000);
+                        System.out.println("threadA end");
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        Thread threadB = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                synchronized (o) {
+                    try {
+                        System.out.println("threadB begin");
+                        Thread.sleep(1000);
+                        System.out.println("threadB end");
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
         threadA.start();
-        Thread.sleep(2000);
-        threadA.interrupt();
+        threadB.start();
     }
 }

@@ -1,8 +1,10 @@
 package com.github.zhangxin.collection;
 
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @Auther: Zhang Xin
