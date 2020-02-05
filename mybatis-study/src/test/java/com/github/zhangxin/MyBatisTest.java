@@ -35,11 +35,18 @@ public class MyBatisTest {
             sqlSession.close();
         }
     }
+
     @Test
-    public void test(){
+    public void test() {
         StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
-        Student student = studentDao.getStudentByStuId(1218094208);
-        System.out.println(student);
+        Student student1 = studentDao.getStudentByStuId(1218094208);
+//        studentDao.getStudentByStuId(1218094201);
+        Student student = new Student();
+        student.setPassword("123456");
+        student.setStuId(1218094208);
+        studentDao.updateStudent(student);
+        Student student2 = studentDao.getStudentByStuId(1218094208);
+        System.out.println(student1 == student2);
     }
 
 }

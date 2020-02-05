@@ -21,4 +21,24 @@
         from t_student
         where t_student.stu_id = #{stuId}
     </select>
+    <update id="updateStudent" parameterType="com.github.zhangxin.beans.Student">
+        update t_student
+        <set>
+            <if test="classId != null and classId != ''">
+                class_id = #{classId},
+            </if>
+            <if test="stuName != null and stuName != ''">
+                stu_name = #{stuName},
+            </if>
+            <if test="password != null and password != ''">
+                stu_password = #{password}
+            </if>
+        </set>
+        <trim prefix="where">
+            <if test="stuId != null and stuId !=''">
+                stu_id = #{stuId}
+            </if>
+        </trim>
+
+    </update>
 </mapper>

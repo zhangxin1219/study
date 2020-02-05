@@ -9,5 +9,7 @@ import com.github.zhangxin.beans.Student;
  */
 public interface StudentDao {
     Student getStudentByStuId(Integer stuId);
+
+    int updateStudent(Student student);
 }
 
