@@ -4,7 +4,9 @@
 <configuration>
     <!-- 设置导入外部properties文件位置 -->
     <properties resource="jdbc.properties"/>
-
+<!--    <settings>-->
+<!--        <setting name="cacheEnabled" value="true"/>-->
+<!--    </settings>-->
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
@@ -20,4 +22,6 @@
     <mappers>
         <package name="com.github.zhangxin.dao"/>
     </mappers>
+
+
 </configuration>

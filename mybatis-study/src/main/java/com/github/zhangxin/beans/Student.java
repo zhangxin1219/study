@@ -2,6 +2,7 @@ package com.github.zhangxin.beans;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
@@ -10,7 +11,7 @@ import java.sql.Timestamp;
  * @Description:
  */
 @Data
-public class Student {
+public class Student implements Serializable {
     private Integer stuId;
     private String stuName;
     private String password;
