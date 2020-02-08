@@ -13,12 +13,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class SpringTest {
     public static void main(String[] args) {
         ApplicationContext beanFactory = new ClassPathXmlApplicationContext("spring-beans.xml");
-        StudentBean studentBean1 = (StudentBean) beanFactory.getBean("mike");
-        StudentBean studentBean2 = (StudentBean) beanFactory.getBean("nike");
-        StudentBean peter = (StudentBean) beanFactory.getBean("peter");
+//        StudentBean studentBean1 = (StudentBean) beanFactory.getBean("mike");
+//        StudentBean studentBean2 = (StudentBean) beanFactory.getBean("nike");
+//        StudentBean peter = (StudentBean) beanFactory.getBean("peter");
         SchoolBean school1 = (SchoolBean) beanFactory.getBean("school1");
-        SchoolBean school2 = (SchoolBean) beanFactory.getBean("school2");
-        SchoolBean school3 = (SchoolBean) beanFactory.getBean("school3");
+//        SchoolBean school2 = (SchoolBean) beanFactory.getBean("school2");
+//        SchoolBean school3 = (SchoolBean) beanFactory.getBean("school3");
         System.out.println();
     }
 }

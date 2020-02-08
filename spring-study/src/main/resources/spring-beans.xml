@@ -18,5 +18,6 @@
     <bean id="school1" class="com.github.zhangxin.bean.SchoolBean" p:name="NJUPT" />
     <bean id="school2" class="com.github.zhangxin.bean.SchoolFactory1" factory-method="getSchool" autowire="byName"/>
     <bean id="schoolFactory" class="com.github.zhangxin.bean.SchoolFactory2"/>
-    <bean id="school3" factory-bean="schoolFactory" factory-method="getSchool" p:name="bupt"/>
+    <bean id="school3" factory-bean="schoolFactory" factory-method="getSchool" p:name="bupt" />
+    <bean class="com.github.zhangxin.LoggerBeanPostProcessor"/>
 </beans>
