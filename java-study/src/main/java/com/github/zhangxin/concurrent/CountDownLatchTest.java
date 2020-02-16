@@ -20,7 +20,9 @@ public class CountDownLatchTest {
             @Override
             public void run() {
                 try {
-//                    Thread.sleep(1000);
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 } finally {
                     System.out.println("thread1");
                     countDownLatch.countDown();
@@ -32,13 +34,29 @@ public class CountDownLatchTest {
             @Override
             public void run() {
                 try {
-//                    Thread.sleep(1000);
+                   Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 } finally {
                     System.out.println("thread2");
                     countDownLatch.countDown();
                 }
                 System.out.println("thread2 ok");
 
+            }
+        });
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    System.out.println("thread3");
+                    countDownLatch.await();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } finally {
+                    System.out.println("thread3 ok");
+
+                }
             }
         });
         System.out.println("wait all threads over");
